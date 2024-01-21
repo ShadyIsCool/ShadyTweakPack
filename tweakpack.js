@@ -11,8 +11,8 @@ Utils.drawText = function (string, position, fontSize = 35, transparent = false)
 
 MainMenuOverlays.draw; {
     if (state == states.menu) {
-        ctx.fillStyle = transparent ? "white" : "white";
-        ctx.strokeStyle = gradient;
+        ctx.fillStyle = materials.SolidBlock.toggledOnFill
+        ctx.strokeStyle = "#000"
         ctx.beginPath()
         ctx.roundRect(1920 / 2 - 200, 1080 / 2 - 425, 400, 150, 30)
         ctx.stroke()
@@ -24,12 +24,13 @@ MainMenuOverlays.draw; {
         let rightTextLocation2 = new Vector2D(1410, 840).asArray()
 
         ctx.font = "px Verdana"
-        ctx.fillStyle = "#000"
+        ctx.fillStyle = "white"
         ctx.strokeStyle = "#eee"
         ctx.strokeText("FLICC", ...titleLocation)
         ctx.fillText("FLICC", ...titleLocation)
 
-        ctx.font = "35px Russo One"
+        ctx.font = "px Verdana"
+        ctx.fillStyle = "white"
         ctx.strokeText("Editor", ...leftTextLocation)
         ctx.fillText("Editor", ...leftTextLocation)
 
